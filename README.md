@@ -1,4 +1,4 @@
-<h1 align="center">Voi-networks</h1>
+<h1 align="center">Voi Network</h1>
 
 [Install Voi relay node with Docker by @Cswenor ](https://github.com/cswenor/voi-relay-setup/blob/main/relay-guide.md)
 
