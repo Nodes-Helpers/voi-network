@@ -111,6 +111,61 @@ Other ways to install Grafana you can find [here](https://grafana.com/docs/grafa
 
    ![image](https://github.com/Nodes-Helpers/voi-network/assets/80079858/38d7d313-4a60-424c-9b98-9bab5184fa4e)
 
+Your prometheus.yml file in /etc/prometeheus/prometheus.yml should look like this:
+
+```# Sample config for Prometheus.
+
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+      monitor: 'example'
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets: ['localhost:9093']
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+
+# Voi
+
+  - job_name: "voi-cn-vps"
+    static_configs:
+      - targets: ['1.1.1.1:9100']
+
+  - job_name: "voi-es-vps"
+    static_configs:
+      - targets: ['2.2.2.2:9100']
+
+  - job_name: "voi-ru-vps"
+    static_configs:
+      - targets: ['3.3.3.3:9100']
+
+  - job_name: "voi-ae-vps"
+    static_configs:
+      - targets: ['4.4.4.4:9100']
+
+  - job_name: "voi-pt-vps"
+    static_configs:
+      - targets: ['5.5.5.5:9100']
+
+  - job_name: "voi-ru-msk-vps"
+    static_configs:
+      - targets: ['6.6.6.6:9100']
+```
 Enjoy!
 
 
