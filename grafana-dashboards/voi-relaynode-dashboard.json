@@ -21,7 +21,7 @@
       }
     ]
   },
-  "description": "Stats of a Cosmos validator",
+  "description": "State of Voi relay node",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 14914,
